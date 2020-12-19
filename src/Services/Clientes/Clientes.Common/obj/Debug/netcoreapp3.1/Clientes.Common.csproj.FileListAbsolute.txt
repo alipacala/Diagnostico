@@ -1,0 +1,9 @@
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Clientes\Clientes.Common\bin\Debug\netcoreapp3.1\Clientes.Common.deps.json
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Clientes\Clientes.Common\bin\Debug\netcoreapp3.1\Clientes.Common.dll
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Clientes\Clientes.Common\bin\Debug\netcoreapp3.1\Clientes.Common.pdb
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Clientes\Clientes.Common\obj\Debug\netcoreapp3.1\Clientes.Common.csprojAssemblyReference.cache
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Clientes\Clientes.Common\obj\Debug\netcoreapp3.1\Clientes.Common.AssemblyInfoInputs.cache
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Clientes\Clientes.Common\obj\Debug\netcoreapp3.1\Clientes.Common.AssemblyInfo.cs
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Clientes\Clientes.Common\obj\Debug\netcoreapp3.1\Clientes.Common.csproj.CoreCompileInputs.cache
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Clientes\Clientes.Common\obj\Debug\netcoreapp3.1\Clientes.Common.dll
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Clientes\Clientes.Common\obj\Debug\netcoreapp3.1\Clientes.Common.pdb

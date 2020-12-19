@@ -1,0 +1,9 @@
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Common\Services.Common.Collection\bin\Debug\netcoreapp3.1\Services.Common.Collection.deps.json
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Common\Services.Common.Collection\bin\Debug\netcoreapp3.1\Services.Common.Collection.dll
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Common\Services.Common.Collection\bin\Debug\netcoreapp3.1\Services.Common.Collection.pdb
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Common\Services.Common.Collection\obj\Debug\netcoreapp3.1\Services.Common.Collection.csprojAssemblyReference.cache
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Common\Services.Common.Collection\obj\Debug\netcoreapp3.1\Services.Common.Collection.AssemblyInfoInputs.cache
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Common\Services.Common.Collection\obj\Debug\netcoreapp3.1\Services.Common.Collection.AssemblyInfo.cs
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Common\Services.Common.Collection\obj\Debug\netcoreapp3.1\Services.Common.Collection.csproj.CoreCompileInputs.cache
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Common\Services.Common.Collection\obj\Debug\netcoreapp3.1\Services.Common.Collection.dll
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Common\Services.Common.Collection\obj\Debug\netcoreapp3.1\Services.Common.Collection.pdb
