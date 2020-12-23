@@ -9,7 +9,7 @@ namespace Diagnosticos.Api.Controllers
         [HttpGet]
         public string Index()
         {
-            return "Personal.Api is running";
+            return "Diagnosticos.Api is running";
         }
     }
 }

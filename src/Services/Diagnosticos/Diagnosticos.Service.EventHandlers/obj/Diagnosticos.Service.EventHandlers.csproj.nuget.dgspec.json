@@ -170,6 +170,24 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "CSProlog": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "SWI.Prolog": {
+              "target": "Package",
+              "version": "[1.1.5990, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

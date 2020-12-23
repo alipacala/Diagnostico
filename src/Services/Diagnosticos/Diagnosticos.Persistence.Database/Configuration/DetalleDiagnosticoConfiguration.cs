@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Diagnosticos.Domain;
+﻿using Diagnosticos.Domain;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Diagnosticos.Persistence.Database.Configuration
 {

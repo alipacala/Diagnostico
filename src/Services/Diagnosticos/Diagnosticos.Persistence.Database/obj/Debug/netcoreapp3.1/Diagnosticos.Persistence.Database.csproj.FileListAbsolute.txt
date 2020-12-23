@@ -1,0 +1,12 @@
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\bin\Debug\netcoreapp3.1\Diagnosticos.Persistence.Database.deps.json
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\bin\Debug\netcoreapp3.1\Diagnosticos.Persistence.Database.dll
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\bin\Debug\netcoreapp3.1\Diagnosticos.Persistence.Database.pdb
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\bin\Debug\netcoreapp3.1\Diagnosticos.Domain.dll
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\bin\Debug\netcoreapp3.1\Diagnosticos.Domain.pdb
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\obj\Debug\netcoreapp3.1\Diagnosticos.Persistence.Database.csprojAssemblyReference.cache
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\obj\Debug\netcoreapp3.1\Diagnosticos.Persistence.Database.AssemblyInfoInputs.cache
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\obj\Debug\netcoreapp3.1\Diagnosticos.Persistence.Database.AssemblyInfo.cs
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\obj\Debug\netcoreapp3.1\Diagnosticos.Persistence.Database.csproj.CoreCompileInputs.cache
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\obj\Debug\netcoreapp3.1\Diagnosticos.Persistence.Database.csproj.CopyComplete
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\obj\Debug\netcoreapp3.1\Diagnosticos.Persistence.Database.dll
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\obj\Debug\netcoreapp3.1\Diagnosticos.Persistence.Database.pdb
