@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Prolog;
+using Diagnosticos.Service.EventHandlers.Exceptions;
 
 namespace Diagnosticos.Service.EventHandlers
 {
@@ -55,6 +56,7 @@ namespace Diagnosticos.Service.EventHandlers
         {
             entry.DetallesDiagnostico = notification.DetallesDiagnostico.Select(x => new DetalleDiagnostico
             {
+                Diagnostico_Id = entry.Id,
                 Sintoma = x.Sintoma
             }).ToList();
         }
@@ -62,13 +64,13 @@ namespace Diagnosticos.Service.EventHandlers
         private void PrepareHeader(Diagnostico entry, DiagnosticoCreateCommand notification)
         {
             // Header information
-            entry.Enfermedad = DetermineEnfermedad(notification);
+            entry.Enfermedad = DeterminarEnfermedad(notification);
             entry.Fecha = DateTime.UtcNow;
             entry.Paciente_Id = notification.Paciente_Id;
             entry.Empleado_Id = notification.Empleado_Id;
         }
 
-        private string DetermineEnfermedad(DiagnosticoCreateCommand notification)
+        public string DeterminarEnfermedad(DiagnosticoCreateCommand notification)
         {
             var prolog = new PrologEngine(persistentCommandHistory: false);
             
@@ -82,6 +84,9 @@ namespace Diagnosticos.Service.EventHandlers
                 new Enfermedad { Nombre = "neumonia", Cantidad = 0, Porcentaje = 0, CantSintomas = 4d },
                 new Enfermedad { Nombre = "covid", Cantidad = 0, Porcentaje = 0, CantSintomas = 7d }
             };
+
+            if (notification.DetallesDiagnostico == null || notification.DetallesDiagnostico.Count <= 0)
+                throw new DiagnosticosDiagnosticoCreateCommandException($"No hay detalles de diagnostico en el diagnostico.");
 
             foreach (var detalle in notification.DetallesDiagnostico)
             {

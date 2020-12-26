@@ -8,7 +8,6 @@
     <PackageReference Include="CSProlog" Version="6.0.0" />
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
-    <PackageReference Include="SWI.Prolog" Version="1.1.5990" />
   </ItemGroup>
 
   <ItemGroup>
