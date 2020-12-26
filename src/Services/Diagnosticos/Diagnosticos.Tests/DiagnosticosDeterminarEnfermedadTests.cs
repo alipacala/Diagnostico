@@ -56,7 +56,7 @@ namespace Diagnosticos.Tests
 
             string actualResult = eventHandler.DeterminarEnfermedad(diagnostico);
 
-            Assert.AreEqual(actualResult, expectedResult);
+            Assert.AreEqual(expectedResult, actualResult);
         }
 
         [TestMethod]
