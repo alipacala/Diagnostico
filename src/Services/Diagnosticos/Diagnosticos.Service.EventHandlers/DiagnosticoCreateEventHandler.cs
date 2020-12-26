@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using SbsSW.SwiPlCs;
+using Prolog;
 
 namespace Diagnosticos.Service.EventHandlers
 {
@@ -62,71 +62,56 @@ namespace Diagnosticos.Service.EventHandlers
         private void PrepareHeader(Diagnostico entry, DiagnosticoCreateCommand notification)
         {
             // Header information
-            entry.Enfermedad = DetermineEnfermedad(entry, notification);
+            entry.Enfermedad = DetermineEnfermedad(notification);
             entry.Fecha = DateTime.UtcNow;
             entry.Paciente_Id = notification.Paciente_Id;
             entry.Empleado_Id = notification.Empleado_Id;
         }
 
-        private string DetermineEnfermedad(Diagnostico entry, DiagnosticoCreateCommand notification)
+        private string DetermineEnfermedad(DiagnosticoCreateCommand notification)
         {
-            Environment.SetEnvironmentVariable("Path", @"C:\\Program Files (x86)\\swipl\\bin");
-            string[] p = { "-q", "-f", @"enfermedad.pl" };
-
-            try
+            var prolog = new PrologEngine(persistentCommandHistory: false);
+            
+            var enfermedades = new List<Enfermedad>
             {
-                PlEngine.Initialize(p);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-
-            var listaEnfermedad = new List<string>();
-            var listaEnfermedades = new List<ResultadoEnfermedad>
-            {
-                new ResultadoEnfermedad { NombreEnfermedad = "gripe", CantCoincidencias = 0, PorcCoincidencias = 0, ValorArbitrario = 5d },
-                new ResultadoEnfermedad { NombreEnfermedad = "gripeA", CantCoincidencias = 0, PorcCoincidencias = 0, ValorArbitrario = 6d },
-                new ResultadoEnfermedad { NombreEnfermedad = "anemia", CantCoincidencias = 0, PorcCoincidencias = 0, ValorArbitrario = 5d },
-                new ResultadoEnfermedad { NombreEnfermedad = "rubeola", CantCoincidencias = 0, PorcCoincidencias = 0, ValorArbitrario = 4d },
-                new ResultadoEnfermedad { NombreEnfermedad = "dengue", CantCoincidencias = 0, PorcCoincidencias = 0, ValorArbitrario = 5d },
-                new ResultadoEnfermedad { NombreEnfermedad = "neumonia", CantCoincidencias = 0, PorcCoincidencias = 0, ValorArbitrario = 4d },
-                new ResultadoEnfermedad { NombreEnfermedad = "covid", CantCoincidencias = 0, PorcCoincidencias = 0, ValorArbitrario = 7d }
+                new Enfermedad { Nombre = "gripe", Cantidad = 0, Porcentaje = 0, CantSintomas = 5d },
+                new Enfermedad { Nombre = "gripeA", Cantidad = 0, Porcentaje = 0, CantSintomas = 6d },
+                new Enfermedad { Nombre = "anemia", Cantidad = 0, Porcentaje = 0, CantSintomas = 5d },
+                new Enfermedad { Nombre = "rubeola", Cantidad = 0, Porcentaje = 0, CantSintomas = 4d },
+                new Enfermedad { Nombre = "dengue", Cantidad = 0, Porcentaje = 0, CantSintomas = 5d },
+                new Enfermedad { Nombre = "neumonia", Cantidad = 0, Porcentaje = 0, CantSintomas = 4d },
+                new Enfermedad { Nombre = "covid", Cantidad = 0, Porcentaje = 0, CantSintomas = 7d }
             };
-            var listaSintomas = notification.DetallesDiagnostico.Select(detalle => detalle.Sintoma).ToList();
 
-            foreach (var sintoma in listaSintomas)
+            foreach (var detalle in notification.DetallesDiagnostico)
             {
-                PlQuery query = new PlQuery($"enfermedadde(Z, {sintoma})");
-                foreach (PlQueryVariables queryVariables in query.SolutionVariables)
-                    listaEnfermedad.Add(queryVariables["Z"].ToString());
+                var solution = prolog
+                    .GetAllSolutions(@"D:/Escritorio/enfermedad.pl", $"enfermedadde(Z, {detalle.Sintoma})")
+                    .NextSolution;
+
+                foreach (var variable in solution)
+                {
+                    var coincidencia = variable.NextVariable.First().Value;
+
+                    if (enfermedades.Select(x => x.Nombre).Contains(coincidencia))
+                        enfermedades.Single(x => x.Nombre == coincidencia).Cantidad++;
+                }
             }
 
-            var resultado = from item in listaEnfermedad.Cast<string>()
-                            group item by item into g
-                            select new
-                            {
-                                enfermedad = g.Key,
-                                cantidad = g.Count()
-                            };
+            foreach (var enfermedad in enfermedades)
+                enfermedad.Porcentaje = enfermedad.Cantidad * 100 / enfermedad.CantSintomas;
 
-            foreach (var enfermedad in listaEnfermedades)
-            {
-                enfermedad.CantCoincidencias = resultado.Single(x => x.enfermedad == enfermedad.NombreEnfermedad).cantidad;
-                enfermedad.PorcCoincidencias = enfermedad.CantCoincidencias * 100 / enfermedad.ValorArbitrario;
-            }
+            var maxPorc = enfermedades.Max(x => x.Porcentaje);
 
-            var maxPorc = listaEnfermedades.Max(x => x.PorcCoincidencias);
-
-            return listaEnfermedades.First(x => x.PorcCoincidencias == maxPorc).NombreEnfermedad;
+            return enfermedades.First(x => x.Porcentaje == maxPorc).Nombre;
         }
 
-        class ResultadoEnfermedad
+        class Enfermedad
         {
-            public string NombreEnfermedad;
-            public int CantCoincidencias;
-            public double PorcCoincidencias;
-            public double ValorArbitrario;
+            public string Nombre;
+            public int Cantidad;
+            public double Porcentaje;
+            public double CantSintomas;
         }
     }
 }
