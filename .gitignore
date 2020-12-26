@@ -440,3 +440,15 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# User defined
+src/Services/Diagnosticos/Diagnosticos.Api/bin/
+src/Services/Diagnosticos/Diagnosticos.Api/obj/
+src/Services/Diagnosticos/Diagnosticos.Domain/bin/
+src/Services/Diagnosticos/Diagnosticos.Domain/obj/
+src/Services/Diagnosticos/Diagnosticos.Persistence.Database/bin/
+src/Services/Diagnosticos/Diagnosticos.Persistence.Database/obj/
+src/Services/Diagnosticos/Diagnosticos.Service.EventHandlers/bin/
+src/Services/Diagnosticos/Diagnosticos.Service.EventHandlers/obj/
+src/Services/Diagnosticos/Diagnosticos.Service.Queries/bin/
+src/Services/Diagnosticos/Diagnosticos.Service.Queries/obj/
