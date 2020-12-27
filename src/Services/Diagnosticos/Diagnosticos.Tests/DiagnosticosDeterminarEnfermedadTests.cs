@@ -1,4 +1,3 @@
-using Diagnosticos.Domain;
 using Diagnosticos.Service.EventHandlers;
 using Diagnosticos.Service.EventHandlers.Commands;
 using Diagnosticos.Service.EventHandlers.Exceptions;

@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Prolog;
 using Diagnosticos.Service.EventHandlers.Exceptions;
+using System.IO;
 
 namespace Diagnosticos.Service.EventHandlers
 {
@@ -73,7 +74,9 @@ namespace Diagnosticos.Service.EventHandlers
         public string DeterminarEnfermedad(DiagnosticoCreateCommand notification)
         {
             var prolog = new PrologEngine(persistentCommandHistory: false);
-            
+;
+            var absPath = Path.GetFullPath("./../../../../Diagnosticos.Service.EventHandlers/enfermedad.pl");
+
             var enfermedades = new List<Enfermedad>
             {
                 new Enfermedad { Nombre = "gripe", Cantidad = 0, Porcentaje = 0, CantSintomas = 5d },
@@ -91,7 +94,7 @@ namespace Diagnosticos.Service.EventHandlers
             foreach (var detalle in notification.DetallesDiagnostico)
             {
                 var solution = prolog
-                    .GetAllSolutions(@"D:/Escritorio/enfermedad.pl", $"enfermedadde(Z, {detalle.Sintoma})")
+                    .GetAllSolutions(absPath, $"enfermedadde(Z, {detalle.Sintoma})")
                     .NextSolution;
 
                 foreach (var variable in solution)
