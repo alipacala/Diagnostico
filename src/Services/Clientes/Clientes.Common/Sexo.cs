@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Clientes.Common
+﻿namespace Clientes.Common
 {
     public enum Sexo
     {

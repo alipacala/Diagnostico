@@ -36,7 +36,7 @@ namespace Diagnosticos.Service.EventHandlers
             using (var transaction = await _context.Database.BeginTransactionAsync()) 
             {
                 _logger.LogInformation("! Preparando los detalles");
-                PrepareDetail(entry, notification);
+                PrepareDetails(entry, notification);
 
                 _logger.LogInformation("! Preparando la cabecera");
                 PrepareHeader(entry, notification);
@@ -53,7 +53,7 @@ namespace Diagnosticos.Service.EventHandlers
             _logger.LogInformation("! Terminó la creación de un nuevo diagnóstico");
         }
 
-        private void PrepareDetail(Diagnostico entry, DiagnosticoCreateCommand notification) 
+        private void PrepareDetails(Diagnostico entry, DiagnosticoCreateCommand notification) 
         {
             entry.DetallesDiagnostico = notification.DetallesDiagnostico.Select(x => new DetalleDiagnostico
             {

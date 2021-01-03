@@ -38,7 +38,14 @@ namespace Clientes.Service.Queries
 
         public async Task<PacienteDto> GetAsync(int id)
         {
-            return (await _context.Pacientes.SingleAsync(x => x.Id == id)).MapTo<PacienteDto>();
+            try
+            {
+                return (await _context.Pacientes.SingleAsync(x => x.Id == id)).MapTo<PacienteDto>();
+            }
+            catch (System.InvalidOperationException)
+            {
+                return null;
+            }
         }
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Diagnosticos.Persistence.Database.Migrations
 {
-    public partial class Inicializar : Migration
+    public partial class Initialize : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -35,26 +35,25 @@ namespace Diagnosticos.Persistence.Database.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Diagnostico_Id = table.Column<int>(type: "int", nullable: false),
-                    Sintoma = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DiagnosticoId = table.Column<int>(type: "int", nullable: true)
+                    Sintoma = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DetallesDiagnosticos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_DetallesDiagnosticos_Diagnosticos_DiagnosticoId",
-                        column: x => x.DiagnosticoId,
+                        name: "FK_DetallesDiagnosticos_Diagnosticos_Diagnostico_Id",
+                        column: x => x.Diagnostico_Id,
                         principalSchema: "Diagnosticos",
                         principalTable: "Diagnosticos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_DetallesDiagnosticos_DiagnosticoId",
+                name: "IX_DetallesDiagnosticos_Diagnostico_Id",
                 schema: "Diagnosticos",
                 table: "DetallesDiagnosticos",
-                column: "DiagnosticoId");
+                column: "Diagnostico_Id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -1,5 +1,4 @@
 using Common.Logging;
-using HealthChecks.UI.Client;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -13,6 +12,9 @@ using Microsoft.Extensions.Logging;
 using Clientes.Persistence.Database;
 using Clientes.Service.Queries;
 using System.Reflection;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace Clientes.Api
 {
@@ -39,13 +41,30 @@ namespace Clientes.Api
 
             services.AddHealthChecks()
                 .AddCheck("self", () => HealthCheckResult.Healthy())
-                .AddDbContextCheck<ApplicationDbContext>();
+                .AddDbContextCheck<ApplicationDbContext>(typeof(ApplicationDbContext).Name);
 
             services.AddMediatR(Assembly.Load("Clientes.Service.EventHandlers"));
 
             services.AddTransient<IPacienteQueryService, PacienteQueryService>();
 
             services.AddControllers();
+
+            var secretKey = Encoding.ASCII.GetBytes(
+                Configuration.GetValue<string>("SecretKey")
+            );
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(secretKey),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,14 +84,14 @@ namespace Clientes.Api
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHealthChecks("/healthcheck", new HealthCheckOptions
+                endpoints.MapHealthChecks("/healthcheck", new HealthCheckOptions()
                 {
-                    Predicate = _ => true,
-                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                    Predicate = _ => true
                 });
             });
         }

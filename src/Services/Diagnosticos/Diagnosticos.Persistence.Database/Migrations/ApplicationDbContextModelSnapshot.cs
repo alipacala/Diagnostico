@@ -27,9 +27,6 @@ namespace Diagnosticos.Persistence.Database.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("DiagnosticoId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Diagnostico_Id")
                         .HasColumnType("int");
 
@@ -38,7 +35,7 @@ namespace Diagnosticos.Persistence.Database.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DiagnosticoId");
+                    b.HasIndex("Diagnostico_Id");
 
                     b.ToTable("DetallesDiagnosticos");
                 });
@@ -69,9 +66,13 @@ namespace Diagnosticos.Persistence.Database.Migrations
 
             modelBuilder.Entity("Diagnosticos.Domain.DetalleDiagnostico", b =>
                 {
-                    b.HasOne("Diagnosticos.Domain.Diagnostico", null)
+                    b.HasOne("Diagnosticos.Domain.Diagnostico", "Diagnostico")
                         .WithMany("DetallesDiagnostico")
-                        .HasForeignKey("DiagnosticoId");
+                        .HasForeignKey("Diagnostico_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Diagnostico");
                 });
 
             modelBuilder.Entity("Diagnosticos.Domain.Diagnostico", b =>

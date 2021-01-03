@@ -4,14 +4,14 @@ using Diagnosticos.Service.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Service.Common.Collection;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
-namespace Personal.Api.Controllers
+namespace Diagnosticos.Api.Controllers
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
     [Route("diagnosticos")]
     public class DiagnosticosController : ControllerBase
@@ -31,15 +31,8 @@ namespace Personal.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<DataCollection<DiagnosticoDto>> GetAll(int page = 1, int take = 10, string ids = null) 
+        public async Task<DataCollection<DiagnosticoDto>> GetAll(int page = 1, int take = 10) 
         {
-            IEnumerable<int> diagnosticosIds = null;
-
-            if (!string.IsNullOrEmpty(ids)) 
-            {
-                diagnosticosIds = ids.Split(',').Select(x => Convert.ToInt32(x));
-            }
-
             return await _diagnosticoQueryService.GetAllAsync(page, take);
         }
 

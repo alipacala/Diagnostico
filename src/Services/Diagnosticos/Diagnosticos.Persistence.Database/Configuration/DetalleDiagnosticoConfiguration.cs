@@ -8,6 +8,10 @@ namespace Diagnosticos.Persistence.Database.Configuration
         public DetalleDiagnosticoConfiguration(EntityTypeBuilder<DetalleDiagnostico> entityBuilder)
         {
             entityBuilder.HasKey(x => x.Id);
+            entityBuilder.HasOne(x => x.Diagnostico)
+                .WithMany(x => x.DetallesDiagnostico)
+                .HasForeignKey(x => x.Diagnostico_Id)
+                .IsRequired();
         }
     }
 }
