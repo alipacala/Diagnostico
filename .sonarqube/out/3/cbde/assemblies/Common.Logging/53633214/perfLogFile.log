@@ -1,8 +1,0 @@
-File name	Line	Function	Duration[ms]	Explored nodes
-C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Common\Common.Logging\SysLogger.cs	22	_Common.Logging.SyslogLoggerProvider.CreateLogger$string$	0	2
-C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Common\Common.Logging\SysLogger.cs	27	_Common.Logging.SyslogLoggerProvider.Dispose$$	0	2
-C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Common\Common.Logging\SysLogger.cs	52	_Common.Logging.SyslogLogger.BeginScope$TState$$TState$	0	2
-C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Common\Common.Logging\SysLogger.cs	62	_Common.Logging.SyslogLogger.Log$TState$$Microsoft.Extensions.Logging.LogLevel.Microsoft.Extensions.Logging.EventId.TState.System.Exception.System.Func$TState.System.Exception.string$$	0	13
-C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Common\Common.Logging\SysLogger.cs	121	_Common.Logging.SyslogLogger.MapToSyslogLevel$Microsoft.Extensions.Logging.LogLevel$	0	16
-C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Common\Common.Logging\SysLogger.cs	163	_Common.Logging.NoopDisposable.Dispose$$	0	2
-C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Common\Common.Logging\SysLogger.cs	170	_Common.Logging.SyslogLoggerExtensions.AddSyslog$Microsoft.Extensions.Logging.ILoggerFactory.string.int.System.Func$string.Microsoft.Extensions.Logging.LogLevel.bool$$	0	2

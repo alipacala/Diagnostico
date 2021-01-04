@@ -1,4 +1,0 @@
-File name	Line	Function	Duration[ms]	Explored nodes
-C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Clientes\Clientes.Persistence.Database\Migrations\20201219122946_Inicializar.cs	156	_Clientes.Persistence.Database.Migrations.Inicializar.Down$Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder$	0	3
-C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Clientes\Clientes.Persistence.Database\ApplicationDbContext.cs	16	_Clientes.Persistence.Database.ApplicationDbContext.OnModelCreating$Microsoft.EntityFrameworkCore.ModelBuilder$	0	3
-C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Clientes\Clientes.Persistence.Database\ApplicationDbContext.cs	27	_Clientes.Persistence.Database.ApplicationDbContext.ModelConfig$Microsoft.EntityFrameworkCore.ModelBuilder$	0	3

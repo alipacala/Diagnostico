@@ -34,7 +34,7 @@ namespace Personal.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<DataCollection<EmpleadoDto>> GetAll(int page = 1, int take = 10, string ids = null) 
+        public async Task<DataCollection<EmpleadoDto>> GetAll(int page = 1, int take = 10, string ids = null, string dni = null) 
         {
             IEnumerable<int> empleadosIds = null;
 
@@ -43,7 +43,7 @@ namespace Personal.Api.Controllers
                 empleadosIds = ids.Split(',').Select(x => Convert.ToInt32(x));
             }
 
-            return await _empleadoQueryService.GetAllAsync(page, take, empleadosIds);
+            return await _empleadoQueryService.GetAllAsync(dni, page, take, empleadosIds);
         }
 
         [HttpGet("{id}")]
@@ -61,6 +61,13 @@ namespace Personal.Api.Controllers
 
         [HttpPatch]
         public async Task<IActionResult> UpdateActivo(EmpleadoUpdateActivoCommand notification)
+        {
+            await _mediator.Publish(notification);
+            return Ok();
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(EmpleadoDeleteCommand notification)
         {
             await _mediator.Publish(notification);
             return Ok();

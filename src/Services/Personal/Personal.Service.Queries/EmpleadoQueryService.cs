@@ -12,7 +12,7 @@ namespace Personal.Service.Queries
 {
     public interface IEmpleadoQueryService
     {
-        Task<DataCollection<EmpleadoDto>> GetAllAsync(int page, int take, IEnumerable<int> empleados = null);
+        Task<DataCollection<EmpleadoDto>> GetAllAsync(string dni, int page, int take, IEnumerable<int> empleados);
         Task<EmpleadoDto> GetAsync(int id);
     }
 
@@ -26,11 +26,12 @@ namespace Personal.Service.Queries
             _context = context;
         }
 
-        public async Task<DataCollection<EmpleadoDto>> GetAllAsync(int page, int take, IEnumerable<int> empleados = null) 
+        public async Task<DataCollection<EmpleadoDto>> GetAllAsync(string dni, int page, int take, IEnumerable<int> empleados = null) 
         {
             var collection = await _context.Empleados
+                .Where(x => dni == null || x.Dni == dni)
                 .Where(x => empleados == null || empleados.Contains(x.Id))
-                .OrderBy(x => x.Nombres)
+                .OrderByDescending(x => x.Id)
                 .GetPagedAsync(page, take);
 
             return collection.MapTo<DataCollection<EmpleadoDto>>();

@@ -1,2 +1,0 @@
-File name	Line	Function	Duration[ms]	Explored nodes
-C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Service.EventHandlers\DiagnosticoCreateEventHandler.cs	64	_Diagnosticos.Service.EventHandlers.DiagnosticoCreateEventHandler.PrepareHeader$Diagnosticos.Domain.Diagnostico.Diagnosticos.Service.EventHandlers.Commands.DiagnosticoCreateCommand$	0	3

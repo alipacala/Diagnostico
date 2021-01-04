@@ -10,7 +10,8 @@ namespace Personal.Service.EventHandlers
 {
     public class EmpleadoEventHandler :
         INotificationHandler<EmpleadoCreateCommand>,
-        INotificationHandler<EmpleadoUpdateActivoCommand>
+        INotificationHandler<EmpleadoUpdateActivoCommand>,
+        INotificationHandler<EmpleadoDeleteCommand>
     {
         private readonly ApplicationDbContext _context;
 
@@ -50,6 +51,14 @@ namespace Personal.Service.EventHandlers
             };
 
             _context.Update(updatedEmpleado);
+            await _context.SaveChangesAsync(cancellationToken);
+        }
+
+        public async Task Handle(EmpleadoDeleteCommand notification, CancellationToken cancellationToken)
+        {
+            var empleado = await _context.Empleados.SingleAsync(x => x.Id == notification.Id, cancellationToken);
+            
+            _context.Remove(empleado);
             await _context.SaveChangesAsync(cancellationToken);
         }
     }

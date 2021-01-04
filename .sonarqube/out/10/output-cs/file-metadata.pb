@@ -1,9 +1,0 @@
-”
-ŠC:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\ApplicationDbContext.csutf-8­
-£C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\Configuration\DetalleDiagnosticoConfiguration.csutf-8¦
-œC:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\Configuration\DiagnosticoConfiguration.csutf-8¤
-šC:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\Migrations\20210102003146_Initialize.csutf-8¯
-£C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\Migrations\20210102003146_Initialize.Designer.csutf-8®
-¢C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\Migrations\ApplicationDbContextModelSnapshot.csutf-8Å
-¹C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.csutf-8È
-¼C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\obj\Debug\netcoreapp3.1\Diagnosticos.Persistence.Database.AssemblyInfo.csutf-8
