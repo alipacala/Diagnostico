@@ -1,0 +1,32 @@
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Identity\Identity.Persistence.Database\ApplicationDbContext.cs
+OnModelCreating 2
+OnModelCreating -1
+ModelConfig 2
+ModelConfig -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Identity\Identity.Persistence.Database\Configuration\RolConfiguration.cs
+Configure 2
+Configure -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Identity\Identity.Persistence.Database\Configuration\UsuarioConfiguration.cs
+Configure 1
+Configure -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Identity\Identity.Persistence.Database\Migrations\20210102135014_Initialize.cs
+Up 2
+Up -1
+Down 3
+Down -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Identity\Identity.Persistence.Database\Migrations\20210102135014_Initialize.Designer.cs
+BuildTargetModel 1
+BuildTargetModel -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Identity\Identity.Persistence.Database\Migrations\ApplicationDbContextModelSnapshot.cs
+BuildModel 2
+BuildModel -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Identity\Identity.Persistence.Database\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Identity\Identity.Persistence.Database\obj\Debug\netcoreapp3.1\Identity.Persistence.Database.AssemblyInfo.cs
+

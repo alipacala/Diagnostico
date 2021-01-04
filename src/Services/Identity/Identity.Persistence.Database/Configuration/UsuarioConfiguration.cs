@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Identity.Persistence.Database.Configuration
 {
-    public class UsuarioConfiguration
+    public static class UsuarioConfiguration
     {
-        public UsuarioConfiguration(EntityTypeBuilder<Usuario> entityBuilder)
+        public static void Configure(EntityTypeBuilder<Usuario> entityBuilder)
         {
             entityBuilder.HasKey(x => x.Id);
 

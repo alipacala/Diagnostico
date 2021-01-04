@@ -5,9 +5,9 @@ using Clientes.Common;
 
 namespace Clientes.Persistence.Database.Configuration
 {
-    public class PacienteConfiguration
+    public static class PacienteConfiguration
     {
-        public PacienteConfiguration(EntityTypeBuilder<Paciente> entityBuilder)
+        public static void Configure(EntityTypeBuilder<Paciente> entityBuilder)
         {
             entityBuilder.HasKey(x => x.Id);
             entityBuilder.Property(x => x.Dni).IsRequired().HasMaxLength(8);

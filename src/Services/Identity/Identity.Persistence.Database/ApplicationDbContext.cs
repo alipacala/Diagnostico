@@ -23,8 +23,8 @@ namespace Identity.Persistence.Database
 
         private void ModelConfig(ModelBuilder modelBuilder)
         {
-            new UsuarioConfiguration(modelBuilder.Entity<Usuario>());
-            new RolConfiguration(modelBuilder.Entity<Rol>());
+            UsuarioConfiguration.Configure(modelBuilder.Entity<Usuario>());
+            RolConfiguration.Configure(modelBuilder.Entity<Rol>());
         }
     }
 }

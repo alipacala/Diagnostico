@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace Personal.Persistence.Database.Configuration
 {
-    public class EmpleadoConfiguration
+    public static class EmpleadoConfiguration
     {
-        public EmpleadoConfiguration(EntityTypeBuilder<Empleado> entityBuilder)
+        public static void Configure(EntityTypeBuilder<Empleado> entityBuilder)
         {
             entityBuilder.HasKey(x => x.Id);
             entityBuilder.Property(x => x.Dni).IsRequired().HasMaxLength(8);

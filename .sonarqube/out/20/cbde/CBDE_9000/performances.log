@@ -1,0 +1,20 @@
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Service.EventHandlers\Commands\DiagnosticoCreateCommand.cs
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Service.EventHandlers\DiagnosticoCreateEventHandler.cs
+Handle 2
+Handle -1
+PrepareDetails 2
+PrepareDetails -1
+PrepareHeader 3
+PrepareHeader -1
+DeterminarEnfermedad 46
+DeterminarEnfermedad -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Service.EventHandlers\Exceptions\DiagnosticosDiagnosticoCreateCommandException.cs
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Service.EventHandlers\Properties\Resources.Designer.cs
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Service.EventHandlers\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Service.EventHandlers\obj\Debug\netcoreapp3.1\Diagnosticos.Service.EventHandlers.AssemblyInfo.cs
+

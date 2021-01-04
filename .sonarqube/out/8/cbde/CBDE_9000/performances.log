@@ -1,0 +1,28 @@
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Personal\Personal.Persistence.Database\ApplicationDbContext.cs
+OnModelCreating 3
+OnModelCreating -1
+ModelConfig 18
+ModelConfig -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Personal\Personal.Persistence.Database\Configuration\EmpleadoConfiguration.cs
+Configure 1
+Configure -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Personal\Personal.Persistence.Database\Migrations\20201219010518_Inicializar.cs
+Up 2
+Up -1
+Down 2
+Down -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Personal\Personal.Persistence.Database\Migrations\20201219010518_Inicializar.Designer.cs
+BuildTargetModel 3
+BuildTargetModel -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Personal\Personal.Persistence.Database\Migrations\ApplicationDbContextModelSnapshot.cs
+BuildModel 2
+BuildModel -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Personal\Personal.Persistence.Database\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Personal\Personal.Persistence.Database\obj\Debug\netcoreapp3.1\Personal.Persistence.Database.AssemblyInfo.cs
+

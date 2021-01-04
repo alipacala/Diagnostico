@@ -1,0 +1,28 @@
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Api\Controllers\DefaultController.cs
+Index 2
+Index -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Api\Controllers\DiagnosticosController.cs
+GetAll 1
+GetAll -1
+Get 14
+Get -1
+Create 2
+Create -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Api\Program.cs
+Main 2
+Main -1
+CreateHostBuilder 2
+CreateHostBuilder -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Api\Startup.cs
+ConfigureServices 2
+ConfigureServices -1
+Configure 2
+Configure -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Api\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Api\obj\Debug\netcoreapp3.1\Diagnosticos.Api.AssemblyInfo.cs
+

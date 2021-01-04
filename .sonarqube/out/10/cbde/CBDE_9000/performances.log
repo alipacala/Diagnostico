@@ -1,0 +1,32 @@
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\ApplicationDbContext.cs
+OnModelCreating 3
+OnModelCreating -1
+ModelConfig 3
+ModelConfig -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\Configuration\DetalleDiagnosticoConfiguration.cs
+Configure 2
+Configure -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\Configuration\DiagnosticoConfiguration.cs
+Configure 2
+Configure -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\Migrations\20210102003146_Initialize.cs
+Up 2
+Up -1
+Down 3
+Down -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\Migrations\20210102003146_Initialize.Designer.cs
+BuildTargetModel 1
+BuildTargetModel -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\Migrations\ApplicationDbContextModelSnapshot.cs
+BuildModel 3
+BuildModel -1
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
+
+C:\Users\AbrahamLIPACALABILLA\source\repos\Diagnostico\src\Services\Diagnosticos\Diagnosticos.Persistence.Database\obj\Debug\netcoreapp3.1\Diagnosticos.Persistence.Database.AssemblyInfo.cs
+

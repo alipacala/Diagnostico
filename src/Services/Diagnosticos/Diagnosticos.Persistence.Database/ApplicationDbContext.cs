@@ -30,8 +30,8 @@ namespace Diagnosticos.Persistence.Database
 
         private void ModelConfig(ModelBuilder modelBuilder)
         {
-            new DiagnosticoConfiguration(modelBuilder.Entity<Diagnostico>());
-            new DetalleDiagnosticoConfiguration(modelBuilder.Entity<DetalleDiagnostico>());
+            DiagnosticoConfiguration.Configure(modelBuilder.Entity<Diagnostico>());
+            DetalleDiagnosticoConfiguration.Configure(modelBuilder.Entity<DetalleDiagnostico>());
         }
     }
 }

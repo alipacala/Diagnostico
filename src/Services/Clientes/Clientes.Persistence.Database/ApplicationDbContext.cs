@@ -27,7 +27,7 @@ namespace Clientes.Persistence.Database
 
         private void ModelConfig(ModelBuilder modelBuilder)
         {
-            new PacienteConfiguration(modelBuilder.Entity<Paciente>());
+            PacienteConfiguration.Configure(modelBuilder.Entity<Paciente>());
         }
     }
 }

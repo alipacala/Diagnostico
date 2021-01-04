@@ -27,7 +27,7 @@ namespace Personal.Persistence.Database
 
         private void ModelConfig(ModelBuilder modelBuilder)
         {
-            new EmpleadoConfiguration(modelBuilder.Entity<Empleado>());
+            EmpleadoConfiguration.Configure(modelBuilder.Entity<Empleado>());
         }
     }
 }

@@ -4,9 +4,9 @@ using System;
 
 namespace Identity.Persistence.Database.Configuration
 {
-    public class RolConfiguration
+    public static class RolConfiguration
     {
-        public RolConfiguration(EntityTypeBuilder<Rol> entityBuilder)
+        public static void Configure(EntityTypeBuilder<Rol> entityBuilder)
         {
             entityBuilder.HasKey(x => x.Id);
 

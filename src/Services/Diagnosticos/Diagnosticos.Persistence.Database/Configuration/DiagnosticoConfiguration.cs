@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Diagnosticos.Persistence.Database.Configuration
 {
-    public class DiagnosticoConfiguration
+    public static class DiagnosticoConfiguration
     {
-        public DiagnosticoConfiguration(EntityTypeBuilder<Diagnostico> entityBuilder)
+        public static void Configure(EntityTypeBuilder<Diagnostico> entityBuilder)
         {
             entityBuilder.HasKey(x => x.Id);
         }
