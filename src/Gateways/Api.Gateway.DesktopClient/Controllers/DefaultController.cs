@@ -9,7 +9,7 @@ namespace Api.Gateway.DesktopClient
         [HttpGet]
         public string Index()
         {
-            return "Api.Gateways is running";
+            return "Diagnostico is running";
         }
     }
 }

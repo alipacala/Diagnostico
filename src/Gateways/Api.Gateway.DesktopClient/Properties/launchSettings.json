@@ -4,7 +4,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:13749",
+      "applicationUrl": "http://localhost:10000",
       "sslPort": 0
     }
   },
@@ -19,7 +19,7 @@
     "Api.Gateway.DesktopClient": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5000",
+      "applicationUrl": "http://localhost:10020",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
