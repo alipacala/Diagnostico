@@ -74,7 +74,7 @@ namespace Diagnosticos.Service.EventHandlers
         public string DeterminarEnfermedad(DiagnosticoCreateCommand notification)
         {
             var prolog = new PrologEngine(persistentCommandHistory: false);
-;
+
             var absPath = Path.GetFullPath("./../../../../Diagnosticos.Service.EventHandlers/enfermedad.pl");
 
             var enfermedades = new List<Enfermedad>

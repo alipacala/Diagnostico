@@ -17,16 +17,16 @@ namespace Identity.Service.EventHandlers
             _userManager = userManager;
         }
 
-        public async Task<IdentityResult> Handle(UsuarioCreateCommand notification, CancellationToken cancellationToken)
+        public async Task<IdentityResult> Handle(UsuarioCreateCommand request, CancellationToken cancellationToken)
         {
             var entry = new Usuario
             {
-                Empleado_Id = notification.Empleado_Id,
-                NombreCompleto = notification.NombreCompleto,
-                UserName = notification.UserName,
+                Empleado_Id = request.Empleado_Id,
+                NombreCompleto = request.NombreCompleto,
+                UserName = request.UserName,
             };
 
-            return await _userManager.CreateAsync(entry, notification.Password);
+            return await _userManager.CreateAsync(entry, request.Password);
         }
     }
 }

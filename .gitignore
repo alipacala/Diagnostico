@@ -3,4 +3,5 @@
 
 .vs/
 TestResults/
-.sonarqube
+.sonarqube/
+.sonarlint/

@@ -14,13 +14,13 @@ namespace Clientes.Persistence.Database
 
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
+            base.OnModelCreating(modelBuilder);
 
-            builder.HasDefaultSchema("Clientes");
+            modelBuilder.HasDefaultSchema("Clientes");
 
-            ModelConfig(builder);
+            ModelConfig(modelBuilder);
         }
 
         public DbSet<Paciente> Pacientes { get; set; }

@@ -18,7 +18,7 @@ namespace Service.Common.Paging
             page--;
 
             if (page > 0)
-                page = page * take;
+                page *= take;
 
             var result = new DataCollection<T>
             {

@@ -1,9 +1,6 @@
-﻿using Identity.Domain;
-using Identity.Service.EventHandlers.Commands;
+﻿using Identity.Service.EventHandlers.Commands;
 using MediatR;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
 namespace Identity.Api.Controllers
@@ -12,17 +9,11 @@ namespace Identity.Api.Controllers
     [Route("identity")]
     public class IdentityController : ControllerBase
     {
-        private readonly ILogger<IdentityController> _logger;
-        private readonly SignInManager<Usuario> _signInManager;
         private readonly IMediator _mediator;
 
         public IdentityController(
-            ILogger<IdentityController> logger,
-            SignInManager<Usuario> signInManager,
             IMediator mediator)
         {
-            _logger = logger;
-            _signInManager = signInManager;
             _mediator = mediator;
         }
 

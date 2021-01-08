@@ -12,7 +12,7 @@ namespace Personal.Service.Queries
 {
     public interface IEmpleadoQueryService
     {
-        Task<DataCollection<EmpleadoDto>> GetAllAsync(string dni, int page, int take, IEnumerable<int> empleados);
+        Task<DataCollection<EmpleadoDto>> GetAllAsync(string dni, int page, int take, IEnumerable<int> empleados = null);
         Task<EmpleadoDto> GetAsync(int id);
     }
 

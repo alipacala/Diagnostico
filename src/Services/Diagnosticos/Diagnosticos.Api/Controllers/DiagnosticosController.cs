@@ -3,7 +3,6 @@ using Diagnosticos.Service.Queries.DTOs;
 using Diagnosticos.Service.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using Service.Common.Collection;
 using Microsoft.AspNetCore.Authorization;
@@ -17,15 +16,12 @@ namespace Diagnosticos.Api.Controllers
     public class DiagnosticosController : ControllerBase
     {
         private readonly IDiagnosticoQueryService _diagnosticoQueryService;
-        private readonly ILogger<DiagnosticosController> _logger;
         private readonly IMediator _mediator;
 
         public DiagnosticosController(
-            ILogger<DiagnosticosController> logger,
             IMediator mediator,
             IDiagnosticoQueryService diagnosticoQueryService)
         {
-            _logger = logger;
             _mediator = mediator;
             _diagnosticoQueryService = diagnosticoQueryService;
         }

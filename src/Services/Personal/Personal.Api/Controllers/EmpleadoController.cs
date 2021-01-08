@@ -3,7 +3,6 @@ using Personal.Service.Queries.DTOs;
 using Personal.Service.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Service.Common.Collection;
 using System;
 using System.Collections.Generic;
@@ -20,15 +19,12 @@ namespace Personal.Api.Controllers
     public class EmpleadoController : ControllerBase
     {
         private readonly IEmpleadoQueryService _empleadoQueryService;
-        private readonly ILogger<EmpleadoController> _logger;
         private readonly IMediator _mediator;
 
         public EmpleadoController(
-            ILogger<EmpleadoController> logger,
             IMediator mediator,
             IEmpleadoQueryService empleadoQueryService)
         {
-            _logger = logger;
             _mediator = mediator;
             _empleadoQueryService = empleadoQueryService;
         }

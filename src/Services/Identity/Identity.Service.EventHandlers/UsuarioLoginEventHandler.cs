@@ -35,12 +35,12 @@ namespace Identity.Service.EventHandlers
             _configuration = configuration;
         }
 
-        public async Task<IdentityAccess> Handle(UsuarioLoginCommand notification, CancellationToken cancellationToken)
+        public async Task<IdentityAccess> Handle(UsuarioLoginCommand request, CancellationToken cancellationToken)
         {
             var result = new IdentityAccess();
 
-            var user = await _context.Users.SingleAsync(x => x.UserName == notification.UserName);
-            var response = await _signInManager.CheckPasswordSignInAsync(user, notification.Password, false);
+            var user = await _context.Users.SingleAsync(x => x.UserName == request.UserName);
+            var response = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
 
             if (response.Succeeded)
             {

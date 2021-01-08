@@ -14,7 +14,7 @@ namespace Api.Gateway.Proxies
 {
     public interface IClientesProxy
     {
-        Task<DataCollection<PacienteDto>> GetAllAsync(int page, int take, IEnumerable<int> clients);
+        Task<DataCollection<PacienteDto>> GetAllAsync(int page, int take, IEnumerable<int> pacientes = null);
         Task<PacienteDto> GetAsync(int id);
         Task CreateAsync(PacienteCreateCommand command);
         Task UpdateContactInfoAsync(PacienteUpdateContactInfoCommand command);

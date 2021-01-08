@@ -7,9 +7,6 @@ namespace Api.Gateway.DesktopClient
     public class DefaultController : ControllerBase
     {
         [HttpGet]
-        public string Index()
-        {
-            return "Diagnostico is running";
-        }
+        public string Index() => "Diagnostico is running";
     }
 }

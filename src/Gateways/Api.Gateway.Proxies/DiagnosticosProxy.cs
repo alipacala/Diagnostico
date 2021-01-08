@@ -4,7 +4,6 @@ using Api.Gateway.Models.Diagnosticos.DTOs;
 using Api.Gateway.Proxies.Config;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;

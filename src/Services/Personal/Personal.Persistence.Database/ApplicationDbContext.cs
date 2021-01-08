@@ -14,13 +14,13 @@ namespace Personal.Persistence.Database
 
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
+            base.OnModelCreating(modelBuilder);
 
-            builder.HasDefaultSchema("Personal");
+            modelBuilder.HasDefaultSchema("Personal");
 
-            ModelConfig(builder);
+            ModelConfig(modelBuilder);
         }
 
         public DbSet<Empleado> Empleados { get; set; }

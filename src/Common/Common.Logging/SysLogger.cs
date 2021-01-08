@@ -9,8 +9,8 @@ namespace Common.Logging
 {
     public class SyslogLoggerProvider : ILoggerProvider
     {
-        private string _host;
-        private int _port;
+        private readonly string _host;
+        private readonly int _port;
         private readonly Func<string, LogLevel, bool> _filter;
 
         public SyslogLoggerProvider(string host, int port, Func<string, LogLevel, bool> filter)
@@ -27,16 +27,15 @@ namespace Common.Logging
 
         public void Dispose()
         {
-
+            // This method is empty becuase I don't understand its class code
         }
     }
 
     public class SyslogLogger : ILogger
     {
-        private const int SyslogFacility = 16;
-        private string _categoryName;
-        private string _host;
-        private int _port;
+        private readonly string _categoryName;
+        private readonly string _host;
+        private readonly int _port;
         private readonly Func<string, LogLevel, bool> _filter;
 
         public SyslogLogger(string categoryName,
@@ -113,10 +112,8 @@ namespace Common.Logging
             var logMessage = string.Format("[{0}] {1} | {2} | {3}", environment, assemblyName, hostName, message);
             var bytes = Encoding.UTF8.GetBytes(logMessage);
 
-            using (var client = new UdpClient())
-            {
-                client.SendAsync(bytes, bytes.Length, _host, _port).Wait();
-            }
+            using var client = new UdpClient();
+            client.SendAsync(bytes, bytes.Length, _host, _port).Wait();
         }
 
         private SyslogLogLevel MapToSyslogLevel(LogLevel level)
@@ -160,9 +157,10 @@ namespace Common.Logging
 
     public class NoopDisposable : IDisposable
     {
-        public static NoopDisposable Instance = new NoopDisposable();
+        public static readonly NoopDisposable Instance = new NoopDisposable();
         public void Dispose()
         {
+            // This method is empty becuase I don't understand its class code
         }
     }
 

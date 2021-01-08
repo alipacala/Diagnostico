@@ -14,15 +14,15 @@ namespace Diagnosticos.Persistence.Database
 
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
+            base.OnModelCreating(modelBuilder);
 
             // Database schema
-            builder.HasDefaultSchema("Diagnosticos");
+            modelBuilder.HasDefaultSchema("Diagnosticos");
 
             // Model Contraints
-            ModelConfig(builder);
+            ModelConfig(modelBuilder);
         }
 
         public DbSet<Diagnostico> Diagnosticos { get; set; }

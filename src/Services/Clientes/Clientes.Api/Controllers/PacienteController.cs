@@ -3,7 +3,6 @@ using Clientes.Service.Queries.DTOs;
 using Clientes.Service.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Service.Common.Collection;
 using System;
 using System.Collections.Generic;
@@ -11,7 +10,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using System.Net;
 
 namespace Clientes.Api.Controllers
 {
@@ -21,15 +19,12 @@ namespace Clientes.Api.Controllers
     public class PacienteController : ControllerBase
     {
         private readonly IPacienteQueryService _pacienteQueryService;
-        private readonly ILogger<PacienteController> _logger;
         private readonly IMediator _mediator;
 
         public PacienteController(
-            ILogger<PacienteController> logger,
             IMediator mediator,
             IPacienteQueryService pacienteQueryService)
         {
-            _logger = logger;
             _mediator = mediator;
             _pacienteQueryService = pacienteQueryService;
         }
