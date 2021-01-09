@@ -29,4 +29,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Diagnostico
-        path: ${{ github.workspace }}/**/bin/Debug/netcoreapp3.1/*
+        path: ${{ github.workspace }}/**/bin/Debug/netcoreapp3.1/publish/
