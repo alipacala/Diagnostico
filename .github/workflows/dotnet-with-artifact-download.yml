@@ -25,8 +25,38 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: Publish
       run: dotnet publish
-    - name: Upload Diagnostico Build Artifact
+    - name: Upload Common Build Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: Diagnostico
-        path: ${{ github.workspace }}/**/bin/Debug/netcoreapp3.1/publish/
+        name: Common
+        path: ${{ github.workspace }}/src/Common/**/bin/Debug/netcoreapp3.1/publish/
+    - name: Upload Gateways Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Gateways
+        path: ${{ github.workspace }}/src/Gateways/**/bin/Debug/netcoreapp3.1/publish/
+    - name: Upload Clientes Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Clientes
+        path: ${{ github.workspace }}/src/Services/Clientes/**/bin/Debug/netcoreapp3.1/publish/
+    - name: Upload Services.Common Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Services.Common
+        path: ${{ github.workspace }}/src/Services/Common/**/bin/Debug/netcoreapp3.1/publish/
+    - name: Upload Diagnosticos Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Diagnosticos
+        path: ${{ github.workspace }}/src/Services/Diagnosticos/**/bin/Debug/netcoreapp3.1/publish/
+    - name: Upload Identity Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Identity
+        path: ${{ github.workspace }}/src/Services/Identity/**/bin/Debug/netcoreapp3.1/publish/
+    - name: Upload Personal Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Personal
+        path: ${{ github.workspace }}/src/Services/Personal/**/bin/Debug/netcoreapp3.1/publish/
