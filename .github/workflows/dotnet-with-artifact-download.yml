@@ -23,7 +23,9 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v2.0.8
+    - name: Publish
+      run: dotnet publish
+    - name: Upload Diagnostico Build Artifact
+      uses: actions/upload-artifact@v2
       with:
-        name: generated-artifact
+        name: Diagnostico
