@@ -29,3 +29,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Diagnostico
+        path: ${{ github.workspace }}/artifact/**/*
