@@ -15,6 +15,8 @@ using System.Reflection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System;
+using HealthChecks.UI.Client;
 
 namespace Clientes.Api
 {
@@ -68,10 +70,13 @@ namespace Clientes.Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory, IServiceProvider provider)
         {
             if (env.IsProduction())
             {
+                provider.GetService<ApplicationDbContext>()
+                    .Database.Migrate();
+
                 loggerFactory.AddSyslog(
                     Configuration.GetValue<string>("Papertrail:host"),
                     Configuration.GetValue<int>("Papertrail:port"));
@@ -87,7 +92,8 @@ namespace Clientes.Api
                 endpoints.MapControllers();
                 endpoints.MapHealthChecks("/healthcheck", new HealthCheckOptions()
                 {
-                    Predicate = _ => true
+                    Predicate = _ => true,
+                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
                 });
             });
         }

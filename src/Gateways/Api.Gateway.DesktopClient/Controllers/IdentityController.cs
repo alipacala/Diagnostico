@@ -1,13 +1,10 @@
 ﻿using Api.Gateway.Models.Identity.Commands;
 using Api.Gateway.Proxies;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace Api.Gateway.DesktopClient
 {
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
     [Route("identity")]
     public class IdentityController : ControllerBase
