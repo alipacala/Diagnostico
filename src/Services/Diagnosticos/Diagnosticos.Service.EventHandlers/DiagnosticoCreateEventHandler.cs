@@ -75,7 +75,7 @@ namespace Diagnosticos.Service.EventHandlers
         {
             var prolog = new PrologEngine(persistentCommandHistory: false);
 
-            var absPath = Path.GetFullPath("./../../../../Diagnosticos.Service.EventHandlers/enfermedad.pl");
+            var absPath = Path.GetFullPath("./../Diagnosticos.Service.EventHandlers/enfermedad.pl");
 
             var enfermedades = new List<Enfermedad>
             {
