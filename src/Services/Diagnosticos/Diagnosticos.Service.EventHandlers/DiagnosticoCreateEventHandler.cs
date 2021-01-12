@@ -20,6 +20,11 @@ namespace Diagnosticos.Service.EventHandlers
         private readonly ApplicationDbContext _context;
         private readonly ILogger<DiagnosticoCreateEventHandler> _logger;
 
+        public static readonly bool IsRunningFromUnitTest =
+            AppDomain.CurrentDomain.GetAssemblies().Any(
+                a => a.FullName.ToLowerInvariant().Contains("unit") ||
+                    a.FullName.ToLowerInvariant().Contains("test"));
+
         public DiagnosticoCreateEventHandler(
             ApplicationDbContext context,
             ILogger<DiagnosticoCreateEventHandler> logger)
@@ -74,8 +79,13 @@ namespace Diagnosticos.Service.EventHandlers
         public string DeterminarEnfermedad(DiagnosticoCreateCommand notification)
         {
             var prolog = new PrologEngine(persistentCommandHistory: false);
+            string absPath;
 
-            var absPath = Path.GetFullPath("./../Diagnosticos.Service.EventHandlers/enfermedad.pl");
+            var relativePath = "Diagnosticos.Service.EventHandlers/enfermedad.pl";
+            if (IsRunningFromUnitTest)
+                absPath = Path.GetFullPath($"./../../../../{relativePath}");
+            else
+                absPath = Path.GetFullPath($"./../{relativePath}");
 
             var enfermedades = new List<Enfermedad>
             {
