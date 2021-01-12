@@ -82,10 +82,12 @@ namespace Diagnosticos.Service.EventHandlers
             string absPath;
 
             var relativePath = "Diagnosticos.Service.EventHandlers/enfermedad.pl";
-            if (IsRunningFromUnitTest)
-                absPath = Path.GetFullPath($"./../../../../{relativePath}");
-            else
+
+            if (!IsRunningFromUnitTest ||
+                Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "production")
                 absPath = Path.GetFullPath($"./../{relativePath}");
+            else
+                absPath = Path.GetFullPath($"./../../../../{relativePath}");
 
             _logger.LogInformation($"Ruta del archivo: {absPath}");
 
