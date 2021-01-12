@@ -117,9 +117,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIs", "APIs", "{17D71BAA-A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Gateway.DesktopClient", "src\Gateways\Api.Gateway.DesktopClient\Api.Gateway.DesktopClient.csproj", "{FF794F9E-10A7-4894-AB6C-4F4788AB9D43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Gateway.Models", "src\Gateways\Api.Gateway.Models\Api.Gateway.Models.csproj", "{47FA4D2D-FF3D-4D36-ACA9-D85C14D060BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Gateway.Models", "src\Gateways\Api.Gateway.Models\Api.Gateway.Models.csproj", "{47FA4D2D-FF3D-4D36-ACA9-D85C14D060BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Gateway.Proxies", "src\Gateways\Api.Gateway.Proxies\Api.Gateway.Proxies.csproj", "{54E0695C-891A-4303-A194-979507EE6305}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Gateway.Proxies", "src\Gateways\Api.Gateway.Proxies\Api.Gateway.Proxies.csproj", "{54E0695C-891A-4303-A194-979507EE6305}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Diagnosticos.Bdd.Tests", "src\Services\Diagnosticos\Diagnosticos.Bdd.Tests\Diagnosticos.Bdd.Tests.csproj", "{A6D7E5A1-07D7-4FAA-B97C-E5B7641DF245}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -243,6 +245,10 @@ Global
 		{54E0695C-891A-4303-A194-979507EE6305}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54E0695C-891A-4303-A194-979507EE6305}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54E0695C-891A-4303-A194-979507EE6305}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6D7E5A1-07D7-4FAA-B97C-E5B7641DF245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6D7E5A1-07D7-4FAA-B97C-E5B7641DF245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6D7E5A1-07D7-4FAA-B97C-E5B7641DF245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6D7E5A1-07D7-4FAA-B97C-E5B7641DF245}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -304,6 +310,7 @@ Global
 		{FF794F9E-10A7-4894-AB6C-4F4788AB9D43} = {17D71BAA-AF80-477D-9659-C1CBD1A9BBED}
 		{47FA4D2D-FF3D-4D36-ACA9-D85C14D060BA} = {7D5CEA8D-E2B7-4776-B859-44AB301A5D90}
 		{54E0695C-891A-4303-A194-979507EE6305} = {7D5CEA8D-E2B7-4776-B859-44AB301A5D90}
+		{A6D7E5A1-07D7-4FAA-B97C-E5B7641DF245} = {1EC4DBA1-D34F-4DF2-B1AF-369173F723F6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7B1D18D9-995A-459C-931A-A1B72AB4ACF8}

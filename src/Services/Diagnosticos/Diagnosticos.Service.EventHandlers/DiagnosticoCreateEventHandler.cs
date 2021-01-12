@@ -111,6 +111,9 @@ namespace Diagnosticos.Service.EventHandlers
 
             var maxPorc = enfermedades.Max(x => x.Porcentaje);
 
+            if(maxPorc <= 0)
+                throw new DiagnosticosDiagnosticoCreateCommandException($"No hay detalles de diagnostico con sintomas predefinidos en el diagnostico");
+
             return enfermedades.First(x => x.Porcentaje == maxPorc).Nombre;
         }
 
