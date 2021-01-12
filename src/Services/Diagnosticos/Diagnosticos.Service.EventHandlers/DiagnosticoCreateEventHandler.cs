@@ -87,6 +87,8 @@ namespace Diagnosticos.Service.EventHandlers
             else
                 absPath = Path.GetFullPath($"./../{relativePath}");
 
+            _logger.LogInformation($"Ruta del archivo: {absPath}");
+
             var enfermedades = new List<Enfermedad>
             {
                 new Enfermedad { Nombre = "gripe", Cantidad = 0, Porcentaje = 0, CantSintomas = 5d },
