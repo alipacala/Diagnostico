@@ -81,13 +81,14 @@ namespace Diagnosticos.Service.EventHandlers
             var prolog = new PrologEngine(persistentCommandHistory: false);
             string absPath;
 
-            var relativePath = "Diagnosticos.Service.EventHandlers/enfermedad.pl";
-
-            if (!IsRunningFromUnitTest ||
-                Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "production")
-                absPath = Path.GetFullPath($"./../{relativePath}");
+            var filename = "enfermedad.pl";
+            
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "production")
+                absPath = Path.GetFullPath($"./pl/{filename}");
+            else if (!IsRunningFromUnitTest)
+                absPath = Path.GetFullPath($"./../Diagnosticos.Service.EventHandlers/{filename}");
             else
-                absPath = Path.GetFullPath($"./../../../../{relativePath}");
+                absPath = Path.GetFullPath($"./../../../../Diagnosticos.Service.EventHandlers/{filename}");
 
             _logger.LogInformation($"Ruta del archivo: {absPath}");
 
