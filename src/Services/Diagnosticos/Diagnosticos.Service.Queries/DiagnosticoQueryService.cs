@@ -6,6 +6,8 @@ using Service.Common.Mapping;
 using Service.Common.Paging;
 using System.Linq;
 using System.Threading.Tasks;
+using Diagnosticos.Service.Queries.Exceptions;
+using System;
 
 namespace Diagnosticos.Service.Queries
 {
@@ -37,7 +39,17 @@ namespace Diagnosticos.Service.Queries
 
         public async Task<DiagnosticoDto> GetAsync(int id)
         {
-            return (await _context.Diagnosticos.Include(x => x.DetallesDiagnostico).SingleAsync(x => x.Id == id)).MapTo<DiagnosticoDto>();
+            var diagnosticos = _context.Diagnosticos.Include(x => x.DetallesDiagnostico);
+
+            try
+            {
+                var diagnostico = await diagnosticos.SingleAsync(x => x.Id == id);
+                return diagnostico.MapTo<DiagnosticoDto>();
+            }
+            catch (InvalidOperationException)
+            {
+                throw new DiagnosticosGetDiagnosticoException($"No se ha encontrado el diagnostico con Id {id}");
+            }
         }
     }
 }

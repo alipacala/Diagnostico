@@ -1,5 +1,6 @@
 ﻿using Diagnosticos.Persistence.Database;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace Diagnosticos.Bdd.Tests
 {
@@ -9,6 +10,7 @@ namespace Diagnosticos.Bdd.Tests
         {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
                 .UseInMemoryDatabase(databaseName: $"Diagnosticos.Db")
+                .ConfigureWarnings(x => x.Ignore(InMemoryEventId.TransactionIgnoredWarning))
                 .Options;
 
             return new ApplicationDbContext(options);

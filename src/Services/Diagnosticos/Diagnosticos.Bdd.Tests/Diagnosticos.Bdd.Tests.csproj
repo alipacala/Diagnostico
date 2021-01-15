@@ -32,6 +32,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Diagnosticos.Persistence.Database\Diagnosticos.Persistence.Database.csproj" />
     <ProjectReference Include="..\Diagnosticos.Service.EventHandlers\Diagnosticos.Service.EventHandlers.csproj" />
+    <ProjectReference Include="..\Diagnosticos.Service.Queries\Diagnosticos.Service.Queries.csproj" />
   </ItemGroup>
 
 </Project>

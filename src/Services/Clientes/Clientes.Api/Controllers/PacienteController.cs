@@ -30,7 +30,7 @@ namespace Clientes.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<DataCollection<PacienteDto>> GetAll(int page = 1, int take = 10, string ids = null) 
+        public async Task<DataCollection<PacienteDto>> GetAll(int page = 1, int take = 10, string ids = null, string dni = null) 
         {
             IEnumerable<int> pacientesIds = null;
 
@@ -39,7 +39,7 @@ namespace Clientes.Api.Controllers
                 pacientesIds = ids.Split(',').Select(x => Convert.ToInt32(x));
             }
 
-            return await _pacienteQueryService.GetAllAsync(page, take, pacientesIds);
+            return await _pacienteQueryService.GetAllAsync(dni, page, take, pacientesIds);
         }
 
         [HttpGet("{id}")]

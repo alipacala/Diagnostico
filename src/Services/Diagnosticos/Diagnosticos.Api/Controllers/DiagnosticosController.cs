@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Service.Common.Collection;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Diagnosticos.Service.EventHandlers.Exceptions;
+using Diagnosticos.Service.Queries.Exceptions;
 
 namespace Diagnosticos.Api.Controllers
 {
@@ -33,16 +35,30 @@ namespace Diagnosticos.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<DiagnosticoDto> Get(int id)
+        public async Task<ActionResult<DiagnosticoDto>> Get(int id)
         {
-            return await _diagnosticoQueryService.GetAsync(id);
+            try
+            {
+                return await _diagnosticoQueryService.GetAsync(id);
+            }
+            catch (DiagnosticosGetDiagnosticoException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(DiagnosticoCreateCommand notification)
         {
-            await _mediator.Publish(notification);
-            return Ok();
+            try
+            {
+                await _mediator.Publish(notification);
+                return Ok();
+            }
+            catch (DiagnosticosDiagnosticoCreateCommandException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
