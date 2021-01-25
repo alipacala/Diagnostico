@@ -1,6 +1,7 @@
 ﻿Feature: BuscarDiagnostico
-	Permite al empleado buscar un diagnostico por su Id
-	para ver los datos del diagnóstico y sus detalles
+	Como: Empleado
+	Quiero: Poder buscar un diagnostico por su Id
+	Para: Poder analizar el historial del paciente
 
 Scenario: Buscar un diagnostico existente
 	Given un diagnostico con el Id 1 agregado en la base de datos

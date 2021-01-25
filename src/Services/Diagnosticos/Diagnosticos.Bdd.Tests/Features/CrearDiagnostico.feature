@@ -1,7 +1,7 @@
 ﻿Feature: CrearDiagnostico
-	Permite al empleado crear un nuevo diagnostico
-	para determinar la posible enfermedad y para
-	guardarlo en la base de datos
+	Como: Empleado
+	Quiero: Poder registrar un diagnóstico generado de un paciente determinado
+	Para: Poder llevar un control de los diagnósticos de los pacientes
 
 Scenario: Crear un diagnostico correctamente
 	Given un diagnostico con detalles de diagnostico válidos

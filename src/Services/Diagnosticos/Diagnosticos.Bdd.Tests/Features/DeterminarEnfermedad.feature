@@ -1,6 +1,7 @@
 ﻿Feature: Determinar Enfermedad
-
-Permite probar el método que toma un diagnostico y sus detalles y devuelve la enfermedad estimada
+	Como: Empleado
+	Quiero: Poder determinar una enfermedad dada una serie de sintomas
+	Para: Poder registrar un nuevo diagnóstico de un paciente dado
 
 Scenario: Determinar la enfermedad de un diagnostico con algunos detalles
 	Given un diagnostico que tiene detalles de diagnostico

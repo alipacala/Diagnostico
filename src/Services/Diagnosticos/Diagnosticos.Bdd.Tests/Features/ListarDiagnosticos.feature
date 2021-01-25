@@ -1,6 +1,7 @@
 ﻿Feature: ListarDiagnosticos
-	Permite al empleado listar los diagnosticos registrados
-	en la base de datos
+	Como: Empelado
+	Quiero: Poder Listar diagnostico
+	Para: Poder ver los diagnosticos registrados
 
 Scenario: Listar los primeros diagnosticos
 	Given más de 2 diagnosticos registrados en la base de datos
