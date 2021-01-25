@@ -13,13 +13,6 @@ namespace Diagnosticos.Bdd.Tests.StepDefinitions
     [Binding]
     public class ListarDiagnosticosSteps
     {
-        readonly ScenarioContext Scenario;
-
-        public ListarDiagnosticosSteps(ScenarioContext scenario)
-        {
-            Scenario = scenario;
-        }
-
         ApplicationDbContext Context;
         DiagnosticoQueryService Query;
         DataCollection<DiagnosticoDto> Result;
