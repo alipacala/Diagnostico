@@ -28,9 +28,9 @@ namespace Personal.Service.EventHandlers
                 Nombres = notification.Nombres,
                 Apellidos = notification.Apellidos,
                 Activo = notification.Activo
-            });
+            }, cancellationToken);
 
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(cancellationToken);
         }
 
         public async Task Handle(EmpleadoUpdateActivoCommand notification, CancellationToken cancellationToken)

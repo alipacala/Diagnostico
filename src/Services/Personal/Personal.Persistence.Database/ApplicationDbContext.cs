@@ -25,7 +25,7 @@ namespace Personal.Persistence.Database
 
         public DbSet<Empleado> Empleados { get; set; }
 
-        private void ModelConfig(ModelBuilder modelBuilder)
+        private static void ModelConfig(ModelBuilder modelBuilder)
         {
             EmpleadoConfiguration.Configure(modelBuilder.Entity<Empleado>());
         }

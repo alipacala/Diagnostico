@@ -27,7 +27,7 @@ namespace Common.Logging
 
         public void Dispose()
         {
-            // This method is empty becuase I don't understand its class code
+            GC.SuppressFinalize(this);
         }
     }
 
@@ -83,7 +83,7 @@ namespace Common.Logging
             Send(syslogLevel, message);
         }
 
-        internal void Send(SyslogLogLevel logLevel, string message)
+        internal void Send(SyslogLogLevel _, string message)
         {
             if (string.IsNullOrWhiteSpace(_host) || _port <= 0)
             {
@@ -116,7 +116,7 @@ namespace Common.Logging
             client.SendAsync(bytes, bytes.Length, _host, _port).Wait();
         }
 
-        private SyslogLogLevel MapToSyslogLevel(LogLevel level)
+        private static SyslogLogLevel MapToSyslogLevel(LogLevel level)
         {
             if (level == LogLevel.Critical)
                 return SyslogLogLevel.Critical;
@@ -157,10 +157,10 @@ namespace Common.Logging
 
     public class NoopDisposable : IDisposable
     {
-        public static readonly NoopDisposable Instance = new NoopDisposable();
+        public static readonly NoopDisposable Instance = new();
         public void Dispose()
         {
-            // This method is empty becuase I don't understand its class code
+            GC.SuppressFinalize(this);
         }
     }
 

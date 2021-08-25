@@ -30,9 +30,9 @@ namespace Clientes.Service.EventHandlers
                 Email = notification.Email,
                 Celular = notification.Celular,
                 Activo = notification.Activo
-            });
+            }, cancellationToken);
 
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(cancellationToken);
         }
 
         public async Task Handle(PacienteUpdateContactInfoCommand notification, CancellationToken cancellationToken)

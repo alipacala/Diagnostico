@@ -28,7 +28,7 @@ namespace Diagnosticos.Persistence.Database
         public DbSet<Diagnostico> Diagnosticos { get; set; }
         public DbSet<DetalleDiagnostico> DetallesDiagnosticos { get; set; }
 
-        private void ModelConfig(ModelBuilder modelBuilder)
+        private static void ModelConfig(ModelBuilder modelBuilder)
         {
             DiagnosticoConfiguration.Configure(modelBuilder.Entity<Diagnostico>());
             DetalleDiagnosticoConfiguration.Configure(modelBuilder.Entity<DetalleDiagnostico>());

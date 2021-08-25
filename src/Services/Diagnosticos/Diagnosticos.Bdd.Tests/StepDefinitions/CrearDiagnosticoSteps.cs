@@ -22,7 +22,7 @@ namespace Diagnosticos.Bdd.Tests.StepDefinitions
             Scenario = scenario;
         }
 
-        private ILogger<DiagnosticoCreateEventHandler> GetLogger()
+        private static ILogger<DiagnosticoCreateEventHandler> GetLogger()
             => new Mock<ILogger<DiagnosticoCreateEventHandler>>().Object;
 
         readonly ApplicationDbContext Context = ApplicationDbContextInMemory.Get();

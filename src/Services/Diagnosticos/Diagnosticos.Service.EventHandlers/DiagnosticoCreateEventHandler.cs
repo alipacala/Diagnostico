@@ -38,7 +38,7 @@ namespace Diagnosticos.Service.EventHandlers
             _logger.LogInformation("! Empezó la creación de un nuevo diagnóstico");
             var entry = new Diagnostico();
 
-            using (var transaction = await _context.Database.BeginTransactionAsync()) 
+            using (var transaction = await _context.Database.BeginTransactionAsync(cancellationToken)) 
             {
                 _logger.LogInformation("! Preparando los detalles");
                 PrepareDetails(entry, notification);
@@ -47,18 +47,18 @@ namespace Diagnosticos.Service.EventHandlers
                 PrepareHeader(entry, notification);
 
                 _logger.LogInformation("! Guardando el diagnóstico");
-                await _context.AddAsync(entry);
-                await _context.SaveChangesAsync();
+                await _context.AddAsync(entry, cancellationToken);
+                await _context.SaveChangesAsync(cancellationToken);
 
                 _logger.LogInformation($"! El diagnóstico ha sido creado");
 
-                await transaction.CommitAsync();
+                await transaction.CommitAsync(cancellationToken);
             }
 
             _logger.LogInformation("! Terminó la creación de un nuevo diagnóstico");
         }
 
-        private void PrepareDetails(Diagnostico entry, DiagnosticoCreateCommand notification) 
+        private static void PrepareDetails(Diagnostico entry, DiagnosticoCreateCommand notification) 
         {
             entry.DetallesDiagnostico = notification.DetallesDiagnostico.Select(x => new DetalleDiagnostico
             {

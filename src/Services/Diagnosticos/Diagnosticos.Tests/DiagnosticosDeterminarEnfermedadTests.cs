@@ -12,7 +12,7 @@ namespace Diagnosticos.Tests
     [TestClass]
     public class DiagnosticosDeterminarEnfermedadTests
     {
-        private ILogger<DiagnosticoCreateEventHandler> GetLogger
+        private static ILogger<DiagnosticoCreateEventHandler> GetLogger
         {
             get
             {

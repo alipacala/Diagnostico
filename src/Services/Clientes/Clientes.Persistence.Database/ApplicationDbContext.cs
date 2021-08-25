@@ -25,7 +25,7 @@ namespace Clientes.Persistence.Database
 
         public DbSet<Paciente> Pacientes { get; set; }
 
-        private void ModelConfig(ModelBuilder modelBuilder)
+        private static void ModelConfig(ModelBuilder modelBuilder)
         {
             PacienteConfiguration.Configure(modelBuilder.Entity<Paciente>());
         }

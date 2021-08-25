@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{4DEDD913-7034-4BC0-81A9-7E3FBD527CEB}"
+	ProjectSection(SolutionItems) = preProject
+		src\Services\Clientes\Clientes.Api\appsettings.json = src\Services\Clientes\Clientes.Api\appsettings.json
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6409BD0C-B339-4BA2-82D6-97C285729650}"
 EndProject

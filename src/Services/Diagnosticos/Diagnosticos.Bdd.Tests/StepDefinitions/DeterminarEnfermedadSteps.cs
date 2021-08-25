@@ -19,10 +19,10 @@ namespace Diagnosticos.Bdd.Tests.StepDefinitions
             Scenario = scenario;
         }
 
-        private ILogger<DiagnosticoCreateEventHandler> GetLogger()
+        private static ILogger<DiagnosticoCreateEventHandler> GetLogger()
             => new Mock<ILogger<DiagnosticoCreateEventHandler>>().Object;
 
-        readonly DiagnosticoCreateCommand Diagnostico = new DiagnosticoCreateCommand();
+        readonly DiagnosticoCreateCommand Diagnostico = new();
         DiagnosticoCreateEventHandler EventHandler;
 
         private string ActualResult;

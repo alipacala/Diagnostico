@@ -23,7 +23,7 @@ namespace Diagnosticos.Bdd.Tests.StepDefinitions
         {
             Context = ApplicationDbContextInMemory.Get();
 
-            Domain.Diagnostico diagnostico = new Domain.Diagnostico()
+            Domain.Diagnostico diagnostico = new()
             {
                 Empleado_Id = 1,
                 Paciente_Id = 1,

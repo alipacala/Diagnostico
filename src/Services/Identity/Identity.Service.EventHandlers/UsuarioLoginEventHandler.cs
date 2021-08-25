@@ -39,7 +39,7 @@ namespace Identity.Service.EventHandlers
         {
             var result = new IdentityAccess();
 
-            var user = await _context.Users.SingleAsync(x => x.UserName == request.UserName);
+            var user = await _context.Users.SingleAsync(x => x.UserName == request.UserName, cancellationToken);
             var response = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
 
             if (response.Succeeded)

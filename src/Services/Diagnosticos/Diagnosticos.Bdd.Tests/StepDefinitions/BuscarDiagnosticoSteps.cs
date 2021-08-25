@@ -32,7 +32,7 @@ namespace Diagnosticos.Bdd.Tests.StepDefinitions
 
             IdDiagnostico = id;
 
-            Domain.Diagnostico diagnostico = new Domain.Diagnostico()
+            Domain.Diagnostico diagnostico = new()
             {
                 Empleado_Id = 1,
                 Paciente_Id = 1,
